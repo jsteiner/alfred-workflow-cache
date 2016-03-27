@@ -1,0 +1,44 @@
+name:                alfred-workflow-cache
+version:             0.1.0.0
+synopsis:            A library for caching and searching data for Alfred workflows
+description:         Please see README.md
+homepage:            http://github.com/jsteiner/alfred-workflow-cache
+license:             BSD3
+license-file:        LICENSE
+author:              Josh Steiner
+maintainer:          josh@jsteiner.me
+copyright:           2016 Josh Steiner
+category:            Utils
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Alfred
+                     , Alfred.Search
+                     , Alfred.Item
+                     , Alfred.Increment
+                     , Alfred.Cache
+  build-depends:       base >= 4.7 && < 5
+                     , cassava
+                     , vector
+                     , bytestring
+                     , fuzzy
+                     , directory
+                     , text
+                     , xmlgen
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings
+
+test-suite alfred-workflow-cache-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , alfred-workflow-cache
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/jsteiner/alfred-workflow-cache
