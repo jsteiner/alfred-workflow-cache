@@ -12,7 +12,7 @@ incrementVisits :: String -> T.Text -> IO ()
 incrementVisits cacheFile url = do
     items <- getItems cacheFile
     let items' = foldr (incrementIfItem url) [] items
-    writeItems cacheFile items'
+    rawWriteItems cacheFile items'
 
 incrementIfItem :: T.Text -> Item -> [Item] -> [Item]
 incrementIfItem url item items
