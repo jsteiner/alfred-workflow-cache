@@ -1,3 +1,7 @@
+# This Repo is Deprecated
+
+Most of this functionality is now provided natively by Alfred. As such, the boilerplate in this library is no longer necessary.
+
 # Alfred Workflow Cache
 
 A library for caching and searching data for [Alfred] workflows.
